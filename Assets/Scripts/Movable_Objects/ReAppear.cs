@@ -8,6 +8,7 @@ public class ReAppear : MonoBehaviour
     void Start()
     {
         StartCoroutine(PlatformCycle());
+        StartCoroutine(PlatformCycle2());
     }
     private IEnumerator PlatformCycle()
     {
@@ -19,20 +20,24 @@ public class ReAppear : MonoBehaviour
             yield return new WaitForSeconds(2f);
 
             platform1.SetActive(false);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1f);
 
-            platform2.SetActive(true);
-            yield return new WaitForSeconds(3f);
-
-            platform2.SetActive(false);
-            yield return new WaitForSeconds(5f);
-
-        }
-        
-        
             
 
-        
+        }
+  
     }
-   
+    private IEnumerator PlatformCycle2()
+    {
+        while (true)
+        {
+            platform2.SetActive(true);
+            yield return new WaitForSeconds(4f);
+
+            platform2.SetActive(false);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+
 }

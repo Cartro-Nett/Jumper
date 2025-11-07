@@ -10,6 +10,7 @@ TagManager:
   - DangerousGround
   - GameManager
   - Cannon
+  - Heart
   layers:
   - Default
   - TransparentFX
