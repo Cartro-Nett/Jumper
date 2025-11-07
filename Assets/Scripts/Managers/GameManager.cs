@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     }
     public void backGroundMusic()
     {
-        audioSourceBackGround.PlayOneShot(audioBackGround, 0.4f);
+        audioSourceBackGround.PlayOneShot(audioBackGround, 0.1f);
     }
     public void gameOver()
     {

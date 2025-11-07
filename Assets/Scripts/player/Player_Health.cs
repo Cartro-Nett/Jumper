@@ -18,6 +18,7 @@ public class Player_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         
         if (health <= 0 || transform.position.y < -7)
         {
@@ -36,7 +37,10 @@ public class Player_Health : MonoBehaviour
             Debug.Log(health);
             health--;
             Invoke("damageBreak", 1f);
-            
+            if (health < 2)
+            {
+                audioSourceDamage.PlayOneShot(audioDamage[1], 0.5f);
+            }
         }
     }
     void damageBreak()

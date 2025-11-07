@@ -12,12 +12,16 @@ public class player_Movement : MonoBehaviour
     public bool onGround;
 
     public Transform cameraTransform;
+
+    private AudioSource source;
+    public AudioClip jumpSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         defaultJumpStr = jumpStr;
         defaultSpeed = speed;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -80,7 +84,8 @@ public class player_Movement : MonoBehaviour
         {
            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
            rb.AddForce(Vector3.up * jumpStr, ForceMode.Impulse);
-            onGround = false;
+           onGround = false;
+           source.PlayOneShot(jumpSound, 0.2f);
         }
        
     }
