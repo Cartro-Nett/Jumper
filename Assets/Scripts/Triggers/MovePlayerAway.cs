@@ -1,8 +1,9 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class MovePlayerAway : MonoBehaviour
 {
     player_Movement player;
+    [SerializeField] GameObject warningText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +19,13 @@ public class MovePlayerAway : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            warningText.SetActive(true);
             player.transform.position = new Vector3(-3.09f, 0.369f, -2.83f);
+            Invoke("hideText", 3f);
         }
+    }
+    void hideText()
+    {
+        warningText.SetActive(false);   
     }
 }
