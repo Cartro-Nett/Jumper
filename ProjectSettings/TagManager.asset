@@ -11,6 +11,12 @@ TagManager:
   - GameManager
   - Cannon
   - Heart
+  - BronzeCoin
+  - SilverCoin
+  - GoldCoin
+  - Key
+  - SuperPowerUp
+  - Chest
   layers:
   - Default
   - TransparentFX

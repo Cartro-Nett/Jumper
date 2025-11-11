@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioSourceBackGround;
@@ -9,16 +10,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip[] audioEffects;
 
     [SerializeField] GameObject[] textScreens;
+
+
+    public int playerScore = 0;
+    public TextMeshProUGUI scoreText;
+    public static int highScore;
+    [SerializeField] TextMeshProUGUI highScoreText;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         InvokeRepeating("backGroundMusic", 0.1f, 144f);
+        
+        updateHighScore();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void backGroundMusic()
     {
@@ -28,6 +39,13 @@ public class GameManager : MonoBehaviour
     {
         audioSourceEffects.PlayOneShot(audioEffects[0]);
         textScreens[0].SetActive(true);
+        if (playerScore > highScore)
+        {
+            highScore = playerScore;
+            PlayerPrefs.SetInt("HighScore", playerScore);
+            PlayerPrefs.Save();
+
+        }
     }
     public void restartGame()
     {
@@ -44,5 +62,16 @@ public class GameManager : MonoBehaviour
     public void firstLevel()
     {
         SceneManager.LoadSceneAsync(1);
+    }
+    public void addScore(int scoreAdd)
+    {
+        playerScore += scoreAdd;
+        scoreText.text = playerScore.ToString();
+        
+    }
+    public void updateHighScore()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
+        highScoreText.text = $"HighScore: {highScore}";
     }
 }
