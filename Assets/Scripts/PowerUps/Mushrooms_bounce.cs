@@ -20,7 +20,6 @@ public class Mushrooms_bounce : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            
             Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
@@ -28,7 +27,8 @@ public class Mushrooms_bounce : MonoBehaviour
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
                 rb.AddForce(Vector3.up * bouncePower, ForceMode.VelocityChange);
             }
-
+            
         }
     }
+    
 }
