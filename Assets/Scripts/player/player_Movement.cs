@@ -15,6 +15,9 @@ public class player_Movement : MonoBehaviour
 
     private AudioSource source;
     public AudioClip jumpSound;
+
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,13 +25,16 @@ public class player_Movement : MonoBehaviour
         defaultJumpStr = jumpStr;
         defaultSpeed = speed;
         source = GetComponent<AudioSource>();
+       
     }
+
 
     // Update is called once per frame
     void Update()
     {
         movement();
         jumping();
+        
     }
     void movement()
     {
@@ -55,11 +61,7 @@ public class player_Movement : MonoBehaviour
         velocity.y = rb.linearVelocity.y;
         rb.linearVelocity = velocity;
 
-        
-            
-        
-
-        //rotation of the player
+        //Smooth rotation of the player
         if (moveDirection != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
@@ -75,9 +77,21 @@ public class player_Movement : MonoBehaviour
         {
             onGround = true;
         }
+        if(collision.gameObject.tag == "MovingSurfaceCollider")
+        {
+            onGround = true;
+            
+        }
         
     }
-   
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "MovingSurfaceCollider")
+        {
+            
+        }
+    }
+
     void jumping()
     {
         if (Input.GetKeyDown(KeyCode.Space) && onGround)

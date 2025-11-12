@@ -25,6 +25,11 @@ public class Spawn_Objects : MonoBehaviour
             {
                 objects[i].SetActive(true);
             }
+            Invoke("getRid", 4f);
         }
+    }
+    void getRid()
+    {
+        gameObject.SetActive(false);
     }
 }
