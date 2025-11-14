@@ -24,8 +24,8 @@ public class Mushrooms_bounce : MonoBehaviour
             if (rb != null)
             {
                 Debug.Log(rb.linearVelocity);
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-                rb.AddForce(Vector3.up * bouncePower, ForceMode.VelocityChange);
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y, rb.linearVelocity.z);
+                rb.AddForce(Vector3.up * bouncePower, ForceMode.Impulse);
             }
             
         }
