@@ -5,7 +5,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject bulletPrefab2;
     public Transform firePoint;
-    float bulletForce = 5f;
+    float bulletForce = 7f;
     float charge = 0f;
 
     Cannon gun;
@@ -18,14 +18,14 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        firePoint.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
         if (Input.GetKey(KeyCode.T) && gun.hasPickUp)
         {
             charge += 1 * Time.deltaTime;
         }
         if (Input.GetKeyUp(KeyCode.T) && gun.hasPickUp)
         {
-            if (charge > 2.5f)
+            if (charge > 1f)
             {
                 ChargeShot();
                 Debug.Log("BigFire");
@@ -45,7 +45,7 @@ public class PlayerShoot : MonoBehaviour
         Rigidbody RB = bullet.GetComponent<Rigidbody>();
         if (RB != null)
         {
-            RB.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+            RB.AddForce(Camera.main.transform.forward * bulletForce, ForceMode.Impulse);
         }
         charge = 0f;
     }
@@ -56,7 +56,7 @@ public class PlayerShoot : MonoBehaviour
         Rigidbody RB2 = bullet2.GetComponent<Rigidbody>();
         if (RB2 != null)
         {
-            RB2.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+            RB2.AddForce(Camera.main.transform.forward * bulletForce, ForceMode.Impulse);
         }
         charge = 0f;
         

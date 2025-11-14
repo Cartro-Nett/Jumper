@@ -18,6 +18,9 @@ TagManager:
   - SuperPowerUp
   - Chest
   - MovingSurfaceCollider
+  - Wall
+  - Monster
+  - Bullet
   layers:
   - Default
   - TransparentFX
