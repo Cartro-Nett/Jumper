@@ -21,6 +21,7 @@ TagManager:
   - Wall
   - Monster
   - Bullet
+  - KeyProtector
   layers:
   - Default
   - TransparentFX

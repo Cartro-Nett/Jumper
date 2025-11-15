@@ -80,6 +80,7 @@ public class EnemyAI : MonoBehaviour
 
     public void ThrowBall()
     {
+        if (player == null)  return;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);    
 
         

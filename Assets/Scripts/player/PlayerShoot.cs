@@ -28,11 +28,11 @@ public class PlayerShoot : MonoBehaviour
             if (charge > 1f)
             {
                 ChargeShot();
-                Debug.Log("BigFire");
+                
             }
             else
             {
-                Debug.Log("Fire");
+               
                 shoot();
             }
         }
