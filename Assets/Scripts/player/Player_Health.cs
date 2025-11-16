@@ -4,7 +4,7 @@ public class Player_Health : MonoBehaviour
 {
     public int health = 5;
     bool damagePause = false;
-
+    bool invincible = false;
     [SerializeField] AudioSource audioSourceDamage;
     [SerializeField] AudioClip[] audioDamage;
 
@@ -30,7 +30,7 @@ public class Player_Health : MonoBehaviour
     }
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.CompareTag("DangerousGround") && damagePause == false)
+        if (collision.CompareTag("DangerousGround") && damagePause == false && invincible == false)
         {
             audioSourceDamage.PlayOneShot(audioDamage[0]);
             damagePause = true;
@@ -42,7 +42,7 @@ public class Player_Health : MonoBehaviour
                 audioSourceDamage.PlayOneShot(audioDamage[1], 0.5f);
             }
         }
-        if (collision.CompareTag("Enemy") && damagePause == false)
+        if (collision.CompareTag("Enemy") && damagePause == false && invincible == false)
         {
             audioSourceDamage.PlayOneShot(audioDamage[0]);
             damagePause = true;
@@ -54,7 +54,7 @@ public class Player_Health : MonoBehaviour
                 audioSourceDamage.PlayOneShot(audioDamage[1], 0.5f);
             }
         }
-        if (collision.CompareTag("Monster") && damagePause == false)
+        if (collision.CompareTag("Monster") && damagePause == false && invincible == false)
         {
             audioSourceDamage.PlayOneShot(audioDamage[0]);
             damagePause = true;
@@ -71,5 +71,9 @@ public class Player_Health : MonoBehaviour
     {
         damagePause = false;
 
+    }
+    public void invincibility()
+    {
+        invincible = true;
     }
 }

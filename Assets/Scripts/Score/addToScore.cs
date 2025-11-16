@@ -4,6 +4,7 @@ public class addToScore : MonoBehaviour
 {
     public GameManager gameManager;
     bool oneKey =false;
+    bool oneSuperPower = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,9 +38,10 @@ public class addToScore : MonoBehaviour
             oneKey = true;
             Invoke("backToFalse", 3f);
         }
-        else if (collision.CompareTag("SuperPowerUp"))
+        else if (collision.CompareTag("SuperPowerUp") && oneSuperPower == false)
         {
             gameManager.addScore(2000);
+            oneSuperPower = true;
             
         }
 

@@ -77,21 +77,7 @@ public class player_Movement : MonoBehaviour
         {
             onGround = true;
         }
-        if(collision.gameObject.tag == "MovingSurfaceCollider")
-        {
-            onGround = true;
-            
-        }
-        
     }
-    private void OnCollisionExit(Collision collision)
-    {
-        if(collision.gameObject.tag == "MovingSurfaceCollider")
-        {
-            
-        }
-    }
-
     void jumping()
     {
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
