@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class player_Movement : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class player_Movement : MonoBehaviour
     private AudioSource source;
     public AudioClip jumpSound;
 
-
+    [SerializeField] GameManager gameManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +24,7 @@ public class player_Movement : MonoBehaviour
         defaultJumpStr = jumpStr;
         defaultSpeed = speed;
         source = GetComponent<AudioSource>();
-       
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
 
@@ -34,7 +33,14 @@ public class player_Movement : MonoBehaviour
     {
         movement();
         jumping();
-        
+        pause();
+    }
+    void pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.pause();
+        }
     }
     void movement()
     {

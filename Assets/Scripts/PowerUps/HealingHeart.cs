@@ -3,17 +3,13 @@ using UnityEngine;
 public class HealingHeart : MonoBehaviour
 {
     [SerializeField] Player_Health player;
+    [SerializeField] HealthManager healthManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = FindAnyObjectByType<Player_Health>();
-       
-    }
+        healthManager = GameObject.FindWithTag("HealthManager").GetComponent<HealthManager>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     private void OnTriggerEnter(Collider collision)
     {
@@ -24,6 +20,7 @@ public class HealingHeart : MonoBehaviour
             {
                 
                 player.health++;
+                healthManager.UpdateHealth();
                 Destroy(gameObject);
             }
             

@@ -9,10 +9,12 @@ public class Player_Health : MonoBehaviour
     [SerializeField] AudioClip[] audioDamage;
 
     [SerializeField] GameManager gameManager;
+    [SerializeField] HealthManager healthManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        healthManager = GameObject.FindWithTag("HealthManager").GetComponent<HealthManager>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class Player_Health : MonoBehaviour
             damagePause = true;
             Debug.Log(health);
             health--;
+            healthManager.UpdateHealth();
             Invoke("damageBreak", 1f);
             if (health < 2)
             {
@@ -48,6 +51,7 @@ public class Player_Health : MonoBehaviour
             damagePause = true;
             Debug.Log(health);
             health--;
+            healthManager.UpdateHealth();
             Invoke("damageBreak", 1f);
             if (health < 2)
             {
@@ -60,6 +64,7 @@ public class Player_Health : MonoBehaviour
             damagePause = true;
             Debug.Log(health);
             health--;
+            healthManager.UpdateHealth();
             Invoke("damageBreak", 1f);
             if (health < 2)
             {

@@ -25,12 +25,6 @@ public class GameManager : MonoBehaviour
         
         updateHighScore();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void backGroundMusic()
     {
         audioSourceBackGround.PlayOneShot(audioBackGround, 0.1f);
@@ -46,6 +40,17 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
 
         }
+    }
+    public void pause()
+    {
+        if (textScreens[1]  != null)
+        {
+            textScreens[1].SetActive(true);
+        } 
+    }
+    public void resume()
+    {
+        textScreens[1].SetActive(false);
     }
     public void restartGame()
     {
