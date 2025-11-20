@@ -4,11 +4,13 @@ public class SuperPower : MonoBehaviour
 {
     player_Movement player_M;
     Player_Health player_H;
+    PlayerShoot shoot;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player_M = FindAnyObjectByType<player_Movement>();
         player_H = FindAnyObjectByType<Player_Health>();
+        shoot = FindAnyObjectByType<PlayerShoot>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class SuperPower : MonoBehaviour
             player_M.speed = 10;
             player_H.invincibility();
             gameObject.SetActive(false);
+            shoot.empowered();
         }
     }
 }

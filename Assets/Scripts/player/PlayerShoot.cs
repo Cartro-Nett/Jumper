@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
     public Transform firePoint;
     float bulletForce = 7f;
     float charge = 0f;
-
+    bool inPowered = false;
     Cannon gun;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,8 +32,15 @@ public class PlayerShoot : MonoBehaviour
             }
             else
             {
-               
-                shoot();
+                if (inPowered == true)
+                {
+                    ChargeShot();
+                }
+                else
+                {
+                    shoot();
+                }
+                
             }
         }
     }
@@ -60,5 +67,9 @@ public class PlayerShoot : MonoBehaviour
         }
         charge = 0f;
         
+    }
+    public void empowered()
+    {
+        inPowered = true;
     }
 }

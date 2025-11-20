@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI highScoreText;
 
 
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,13 +35,7 @@ public class GameManager : MonoBehaviour
     {
         audioSourceEffects.PlayOneShot(audioEffects[0]);
         textScreens[0].SetActive(true);
-        if (playerScore > highScore)
-        {
-            highScore = playerScore;
-            PlayerPrefs.SetInt("HighScore", playerScore);
-            PlayerPrefs.Save();
-
-        }
+        
     }
     public void pause()
     {
@@ -78,5 +74,21 @@ public class GameManager : MonoBehaviour
     {
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         highScoreText.text = $"HighScore: {highScore}";
+    }
+    public void completedLevel()
+    {
+        if(playerScore > highScore)
+        {
+            textScreens[2].SetActive(true);
+            highScore = playerScore;
+            PlayerPrefs.SetInt("HighScore", playerScore);
+            PlayerPrefs.Save();
+        }
+        Invoke("EndOfLevel", 4f);
+        
+    }
+    void EndOfLevel()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 }
