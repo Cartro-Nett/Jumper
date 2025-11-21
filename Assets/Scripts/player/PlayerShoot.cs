@@ -9,6 +9,8 @@ public class PlayerShoot : MonoBehaviour
     float charge = 0f;
     bool inPowered = false;
     Cannon gun;
+    [SerializeField] AudioSource audioShootEffects;
+    [SerializeField] AudioClip[] shootEffects;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +29,7 @@ public class PlayerShoot : MonoBehaviour
         {
             if (charge > 1f)
             {
+                audioShootEffects.PlayOneShot(shootEffects[0]);
                 ChargeShot();
                 
             }
@@ -34,10 +37,12 @@ public class PlayerShoot : MonoBehaviour
             {
                 if (inPowered == true)
                 {
+                    audioShootEffects.PlayOneShot(shootEffects[0]);
                     ChargeShot();
                 }
                 else
                 {
+                    audioShootEffects.PlayOneShot(shootEffects[1], 0.1f);
                     shoot();
                 }
                 

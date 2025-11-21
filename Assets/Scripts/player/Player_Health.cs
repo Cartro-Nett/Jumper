@@ -34,42 +34,33 @@ public class Player_Health : MonoBehaviour
     {
         if (collision.CompareTag("DangerousGround") && damagePause == false && invincible == false)
         {
-            audioSourceDamage.PlayOneShot(audioDamage[0]);
+            audioSourceDamage.PlayOneShot(audioDamage[(int)Random.Range(0, audioDamage.Length)]);
             damagePause = true;
             Debug.Log(health);
             health--;
             healthManager.UpdateHealth();
             Invoke("damageBreak", 1f);
-            if (health < 2)
-            {
-                audioSourceDamage.PlayOneShot(audioDamage[1], 0.5f);
-            }
+            
         }
         if (collision.CompareTag("Enemy") && damagePause == false && invincible == false)
         {
-            audioSourceDamage.PlayOneShot(audioDamage[0]);
+            audioSourceDamage.PlayOneShot(audioDamage[(int)Random.Range(0, audioDamage.Length)]);
             damagePause = true;
             Debug.Log(health);
             health--;
             healthManager.UpdateHealth();
             Invoke("damageBreak", 1f);
-            if (health < 2)
-            {
-                audioSourceDamage.PlayOneShot(audioDamage[1], 0.5f);
-            }
+            
         }
         if (collision.CompareTag("Monster") && damagePause == false && invincible == false)
         {
-            audioSourceDamage.PlayOneShot(audioDamage[0]);
+            audioSourceDamage.PlayOneShot(audioDamage[(int)Random.Range(0, audioDamage.Length)]);
             damagePause = true;
             Debug.Log(health);
             health--;
             healthManager.UpdateHealth();
             Invoke("damageBreak", 1f);
-            if (health < 2)
-            {
-                audioSourceDamage.PlayOneShot(audioDamage[1], 0.5f);
-            }
+           
         }
     }
     void damageBreak()

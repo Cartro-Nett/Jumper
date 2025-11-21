@@ -3,7 +3,8 @@ using UnityEngine;
 public class MovePlayerToNextArea : MonoBehaviour
 {
     player_Movement player;
-    
+    [SerializeField] AudioSource audioTeleportEffects;
+    [SerializeField] AudioClip audioTeleport;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +22,7 @@ public class MovePlayerToNextArea : MonoBehaviour
         {
             
             player.transform.position = new Vector3(18.9f, 0.369f, -29.83f);
-            
+            audioTeleportEffects.PlayOneShot(audioTeleport);
         }
     }
     
