@@ -4,6 +4,7 @@ public class Cannon : MonoBehaviour
 {
     PlayerShoot Player;
     public bool hasPickUp = false;
+    public GameObject uiHelpers;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +20,7 @@ public class Cannon : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            uiHelpers.SetActive(true);
             hasPickUp = true;
             gameObject.SetActive(false);
         }
