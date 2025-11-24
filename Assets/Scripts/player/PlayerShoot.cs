@@ -21,11 +21,11 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         firePoint.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
-        if (Input.GetKey(KeyCode.T) && gun.hasPickUp)
+        if (Input.GetMouseButton(0) && gun.hasPickUp)
         {
             charge += 1 * Time.deltaTime;
         }
-        if (Input.GetKeyUp(KeyCode.T) && gun.hasPickUp)
+        if (Input.GetMouseButtonUp(0) && gun.hasPickUp)
         {
             if (charge > 1f)
             {

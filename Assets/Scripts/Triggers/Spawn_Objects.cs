@@ -4,6 +4,8 @@ public class Spawn_Objects : MonoBehaviour
 {
     [SerializeField] GameObject[] objects;
     player_Movement player;
+    [SerializeField] AudioSource audioSourceEffects;
+    [SerializeField] AudioClip audioEffects;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +26,11 @@ public class Spawn_Objects : MonoBehaviour
             for (int i = 0; i < objects.Length; i++)
             {
                 objects[i].SetActive(true);
+                if(audioEffects != null && !audioSourceEffects.isPlaying)
+                {
+                    audioSourceEffects.PlayOneShot(audioEffects);
+                }
+                
             }
             Invoke("getRid", 3f);
         }

@@ -4,7 +4,9 @@ public class Mushrooms_bounce : MonoBehaviour
 {
     player_Movement player;
 
-    public float bouncePower = 5f;
+    [SerializeField] float bouncePower = 5f;
+    [SerializeField] AudioSource audioSourceBounce;
+    [SerializeField] AudioClip[] audioBounce;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,8 +25,9 @@ public class Mushrooms_bounce : MonoBehaviour
             Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
+                audioSourceBounce.PlayOneShot(audioBounce[(int)Random.Range(0, audioBounce.Length)]);
                 Debug.Log(rb.linearVelocity);
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y, rb.linearVelocity.z);
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, bouncePower, rb.linearVelocity.z);
                 rb.AddForce(Vector3.up * bouncePower, ForceMode.Impulse);
             }
             

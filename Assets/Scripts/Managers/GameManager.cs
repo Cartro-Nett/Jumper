@@ -79,12 +79,18 @@ public class GameManager : MonoBehaviour
     {
         if(playerScore > highScore)
         {
+            audioSourceEffects.PlayOneShot(audioEffects[1]);
             textScreens[2].SetActive(true);
             highScore = playerScore;
             PlayerPrefs.SetInt("HighScore", playerScore);
             PlayerPrefs.Save();
         }
-        Invoke("EndOfLevel", 4f);
+        else
+        {
+            textScreens[3].SetActive(true);
+            audioSourceEffects.PlayOneShot(audioEffects[2]);
+        }
+        Invoke("EndOfLevel", 10f);
         
     }
     void EndOfLevel()

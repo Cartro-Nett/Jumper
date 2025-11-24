@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
     private Transform player;
     
     [SerializeField] GameObject enemyProjectile;
+    [SerializeField] AudioSource audioSourceShoot;
+    [SerializeField] AudioClip[] audioShoot;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -81,19 +83,20 @@ public class EnemyAI : MonoBehaviour
     public void ThrowBall()
     {
         if (player == null)  return;
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);    
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         
 
         if (distanceToPlayer <= detectionRange)
         {
+            audioSourceShoot.PlayOneShot(audioShoot[(int)Random.Range(0, audioShoot.Length)]);
             GameObject blueBall = Instantiate(enemyProjectile, transform.position, enemyProjectile.transform.rotation);
 
             Vector3 direction = (player.position - transform.position).normalized;
 
             Rigidbody rb = blueBall.GetComponent<Rigidbody>();
             rb.linearVelocity = direction * 8f;
-
+            
             Destroy(blueBall, 3f);
 
         }
