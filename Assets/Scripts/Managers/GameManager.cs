@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
             textScreens[3].SetActive(true);
             audioSourceEffects.PlayOneShot(audioEffects[2]);
         }
-        Invoke("EndOfLevel", 10f);
+        Invoke("EndOfLevel", 7f);
         
     }
     void EndOfLevel()
