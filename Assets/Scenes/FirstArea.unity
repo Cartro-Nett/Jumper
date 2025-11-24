@@ -88269,9 +88269,9 @@ MonoBehaviour:
   audioSourceEffects: {fileID: 759053170}
   audioEffects:
   - {fileID: 8300000, guid: cdcda7417c4b3244e9a4763db6feafcf, type: 3}
-  - {fileID: 8300000, guid: cae08a890d009c846ba1bafc4ce06452, type: 3}
-  - {fileID: 8300000, guid: 7ab848071bddda248a87faff0a07e486, type: 3}
   - {fileID: 8300000, guid: f343dcbf2321b904a978aac6594aa9d4, type: 3}
+  - {fileID: 8300000, guid: 7ab848071bddda248a87faff0a07e486, type: 3}
+  - {fileID: 8300000, guid: cae08a890d009c846ba1bafc4ce06452, type: 3}
   - {fileID: 8300000, guid: 3095f4863742e634ebb65d1551523e95, type: 3}
   - {fileID: 8300000, guid: 32c28602f97be9641984ae2157263cd1, type: 3}
   - {fileID: 8300000, guid: 3d926b3ab7648fa4b9cc5d1c1ee9ecc1, type: 3}
@@ -255729,6 +255729,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 970339523}
+    - target: {fileID: 438779833628607334, guid: df788b57779c3a548a05e65852a9e851, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1180242616240645597, guid: df788b57779c3a548a05e65852a9e851, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1353106192134237642, guid: df788b57779c3a548a05e65852a9e851, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -255737,6 +255745,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 970339523}
+    - target: {fileID: 2253271493404300896, guid: df788b57779c3a548a05e65852a9e851, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3600779496444225419, guid: df788b57779c3a548a05e65852a9e851, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -255821,10 +255833,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4979967677317376464, guid: df788b57779c3a548a05e65852a9e851, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5054813785355689854, guid: df788b57779c3a548a05e65852a9e851, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 970339523}
+    - target: {fileID: 8102950768050070341, guid: df788b57779c3a548a05e65852a9e851, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102950768050070341, guid: df788b57779c3a548a05e65852a9e851, type: 3}
+      propertyPath: m_Color.b
+      value: 0.37254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102950768050070341, guid: df788b57779c3a548a05e65852a9e851, type: 3}
+      propertyPath: m_Color.g
+      value: 0.37254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102950768050070341, guid: df788b57779c3a548a05e65852a9e851, type: 3}
+      propertyPath: m_Color.r
+      value: 0.37254903
+      objectReference: {fileID: 0}
     - target: {fileID: 9089287262846625359, guid: df788b57779c3a548a05e65852a9e851, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
