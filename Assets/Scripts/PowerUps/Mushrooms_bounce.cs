@@ -4,7 +4,7 @@ public class Mushrooms_bounce : MonoBehaviour
 {
     player_Movement player;
 
-    [SerializeField] float bouncePower = 5f;
+    [SerializeField] float bouncePower = 25f;
     [SerializeField] AudioSource audioSourceBounce;
     [SerializeField] AudioClip[] audioBounce;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,8 +27,9 @@ public class Mushrooms_bounce : MonoBehaviour
             {
                 audioSourceBounce.PlayOneShot(audioBounce[(int)Random.Range(0, audioBounce.Length)]);
                 Debug.Log(rb.linearVelocity);
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, bouncePower, rb.linearVelocity.z);
-                rb.AddForce(Vector3.up * bouncePower, ForceMode.Impulse);
+                Vector3 newVelocity = rb.linearVelocity;
+                newVelocity.y = bouncePower;
+                rb.linearVelocity = newVelocity;
             }
             
         }

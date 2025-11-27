@@ -42,19 +42,23 @@ public class GameManager : MonoBehaviour
         if (textScreens[1]  != null)
         {
             textScreens[1].SetActive(true);
+            Time.timeScale = 0f;
         } 
     }
     public void resume()
     {
         textScreens[1].SetActive(false);
+        Time.timeScale = 1f;
     }
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
     public void exitLevel()
     {
         SceneManager.LoadSceneAsync(0);
+        Time.timeScale = 1f;
     }
     public void quitGame()
     {
@@ -96,5 +100,15 @@ public class GameManager : MonoBehaviour
     void EndOfLevel()
     {
         SceneManager.LoadSceneAsync(0);
+    }
+    public void controlScreen()
+    {
+        textScreens[4].SetActive(false);
+        textScreens[5].SetActive(true);
+    }
+    public void exitControlScreen()
+    {
+        textScreens[4].SetActive(true);
+        textScreens[5].SetActive(false);
     }
 }

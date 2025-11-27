@@ -19,7 +19,10 @@ public class Player_SoundEffects : MonoBehaviour
     {
         if (collision.CompareTag("Heart"))
         {
-            audioSourceEffects.PlayOneShot(audioEffects[0]);
+            if (audioEffects != null && !audioSourceEffects.isPlaying)
+            {
+                audioSourceEffects.PlayOneShot(audioEffects[0]);
+            }
         }
         if (collision.CompareTag("BronzeCoin"))
         {

@@ -37,7 +37,7 @@ public class player_Movement : MonoBehaviour
     }
     void pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
         {
             gameManager.pause();
         }

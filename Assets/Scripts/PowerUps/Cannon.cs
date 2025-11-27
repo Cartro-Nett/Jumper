@@ -10,12 +10,6 @@ public class Cannon : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.CompareTag("Player"))
@@ -23,6 +17,11 @@ public class Cannon : MonoBehaviour
             uiHelpers.SetActive(true);
             hasPickUp = true;
             gameObject.SetActive(false);
+            Invoke("endOfHelp", 5f);
         }
+    }
+    void endOfHelp()
+    {
+        uiHelpers.SetActive(false);
     }
 }
