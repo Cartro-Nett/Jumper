@@ -6,7 +6,7 @@ public class EnemyAI : MonoBehaviour
     public float detectionRange = 8f;
     public float attackRange = 0.5f;
     public float chaseSpeed = 2f;
-   
+    public float rotationSpeed = 4f;
 
     private Transform player;
     
@@ -37,13 +37,23 @@ public class EnemyAI : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         if (distanceToPlayer < detectionRange && player != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
-            //FlipEnemy(player.position.x);
-        }
-        else
-        {
+            Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
 
+
+            Vector3 directionToPlayer = targetPosition - transform.position;
+            
+
+            if (directionToPlayer.sqrMagnitude > 0.01f)
+            {
+                Quaternion look = Quaternion.LookRotation(directionToPlayer);
+                transform.rotation = Quaternion.Slerp(transform.rotation, look, Time.deltaTime * rotationSpeed);
+            }
+            //transform.LookAt(player);
+            //FlipEnemy(player.position.x);
+            
         }
+        
 
 
 
