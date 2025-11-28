@@ -34,6 +34,7 @@ public class player_Movement : MonoBehaviour
         movement();
         jumping();
         pause();
+        
     }
     void pause()
     {
@@ -81,14 +82,17 @@ public class player_Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("On ground");
             onGround = true;
         }
     }
+
     void jumping()
     {
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-           rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+            Debug.Log("In air");
+           rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
            rb.AddForce(Vector3.up * jumpStr, ForceMode.Impulse);
            onGround = false;
            source.PlayOneShot(jumpSound, 0.2f);

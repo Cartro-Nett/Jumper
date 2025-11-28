@@ -14,21 +14,25 @@ public class addToScore : MonoBehaviour
     {
         if (collision.CompareTag("BronzeCoin"))
         {
+            collision.enabled = false;
             gameManager.addScore(1);
             collision.gameObject.SetActive(false);
         }
         else if(collision.CompareTag("SilverCoin"))
         {
+            collision.enabled = false;
             gameManager.addScore(5);
             collision.gameObject.SetActive(false);
         }
         else if (collision.CompareTag("GoldCoin"))
         {
+            collision.enabled = false;
             gameManager.addScore(20);
             collision.gameObject.SetActive(false);
         }
         else if (collision.CompareTag("Chest"))
         {
+            collision.enabled = false;
             gameManager.addScore(75);
             collision.gameObject.SetActive(false);
         }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 public class MovePlayerAway : MonoBehaviour
 {
     player_Movement player;
@@ -30,6 +31,6 @@ public class MovePlayerAway : MonoBehaviour
     void hideText()
     {
         
-        warningText.SetActive(false);   
+        warningText.SetActive(false);
     }
 }
