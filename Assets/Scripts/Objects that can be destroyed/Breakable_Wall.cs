@@ -3,6 +3,8 @@ using UnityEngine;
 public class Breakable_Wall : MonoBehaviour
 {
     public GameManager gameManager;
+    [SerializeField] public AudioSource audioSourceBreaking;
+    [SerializeField] public AudioClip audioBreaking;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,8 +20,9 @@ public class Breakable_Wall : MonoBehaviour
     {
         if (collision.CompareTag("BigBullet"))
         {
+            audioSourceBreaking.PlayOneShot(audioBreaking);
             gameManager.addScore(10);
-            Destroy(gameObject);
+            Destroy(gameObject, 0.2f);
         }
     }
 }
