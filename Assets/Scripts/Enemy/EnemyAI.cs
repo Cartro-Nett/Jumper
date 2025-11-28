@@ -13,6 +13,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] GameObject enemyProjectile;
     [SerializeField] AudioSource audioSourceShoot;
     [SerializeField] AudioClip[] audioShoot;
+    [SerializeField] AudioSource audioSourceChase;
+    [SerializeField] AudioClip audioChase;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,6 +50,14 @@ public class EnemyAI : MonoBehaviour
             {
                 Quaternion look = Quaternion.LookRotation(directionToPlayer);
                 transform.rotation = Quaternion.Slerp(transform.rotation, look, Time.deltaTime * rotationSpeed);
+                if(gameObject.CompareTag("Monster"))
+                {
+                    if(!audioSourceChase.isPlaying)
+                    {
+                        audioSourceChase.PlayOneShot(audioChase);
+                    }
+                    
+                }
             }
             //transform.LookAt(player);
             //FlipEnemy(player.position.x);

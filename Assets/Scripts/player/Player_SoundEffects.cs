@@ -19,7 +19,7 @@ public class Player_SoundEffects : MonoBehaviour
     {
         if (collision.CompareTag("Heart"))
         {
-            if (audioEffects != null && !audioSourceEffects.isPlaying)
+            if (!audioSourceEffects.isPlaying)
             {
                 audioSourceEffects.PlayOneShot(audioEffects[0]);
             }
