@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     {
         
         audioManager =  GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-        InvokeRepeating("backGroundMusic", 0.1f, 100f);
+        InvokeRepeating("backGroundMusic", 0.1f, 130f);
         
         updateHighScore();
     }

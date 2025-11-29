@@ -20,7 +20,7 @@ public class Destroyer_Objects : MonoBehaviour
         
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Player entered");
+            Debug.Log("Destroyer active");
             for (int i = 0;  i < objects.Length; i++)
             {
                 Destroy(objects[i]);
