@@ -4,6 +4,7 @@ public class Player_SoundEffects : MonoBehaviour
 {
     [SerializeField] AudioSource audioSourceEffects;
     [SerializeField] AudioClip[] audioEffects;
+  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,6 +49,7 @@ public class Player_SoundEffects : MonoBehaviour
         {
             audioSourceEffects.PlayOneShot(audioEffects[6]);
         }
+       
 
     }
 }

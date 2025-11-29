@@ -82,7 +82,7 @@ public class player_Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("On ground");
+            //Debug.Log("On ground");
             onGround = true;
         }
     }
@@ -91,7 +91,7 @@ public class player_Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            Debug.Log("In air");
+            //Debug.Log("In air");
            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
            rb.AddForce(Vector3.up * jumpStr, ForceMode.Impulse);
            onGround = false;

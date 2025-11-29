@@ -18,18 +18,30 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI highScoreText;
 
 
-
+    [SerializeField] AudioManager audioManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("backGroundMusic", 0.1f, 144f);
+        
+        audioManager =  GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        InvokeRepeating("backGroundMusic", 0.1f, 100f);
         
         updateHighScore();
     }
     public void backGroundMusic()
     {
-        audioSourceBackGround.PlayOneShot(audioBackGround, 0.1f);
+        if(audioManager != null && audioManager.isItPlaying == true)
+        {
+            Debug.Log("Off");
+          audioSourceBackGround.Stop();
+        }
+        else
+        {
+            Debug.Log("On");
+            audioSourceBackGround.PlayOneShot(audioBackGround, 0.1f);
+        }
+        
     }
     public void gameOver()
     {
