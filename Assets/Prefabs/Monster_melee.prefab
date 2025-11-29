@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2805110a0517bb548b22a65ad2b4458c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2805110a0517bb548b22a65ad2b4458c, type: 3}
       propertyPath: m_TagString
@@ -130,7 +130,12 @@ MonoBehaviour:
   detectionRange: 8
   attackRange: 0.5
   chaseSpeed: 2
+  rotationSpeed: 4
   enemyProjectile: {fileID: 0}
+  audioSourceShoot: {fileID: 0}
+  audioShoot: []
+  audioSourceChase: {fileID: 0}
+  audioChase: {fileID: 0}
 --- !u!54 &7128311922357184018
 Rigidbody:
   m_ObjectHideFlags: 0

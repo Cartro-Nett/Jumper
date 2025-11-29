@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (gameObject.CompareTag("Enemy"))
         {
-            InvokeRepeating("ThrowBall", 3f, 3f);
+            InvokeRepeating("ThrowBall", 2f, 2f);
         }
     }
 
