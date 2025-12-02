@@ -14,6 +14,7 @@ public class PlayerShoot : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Cursor.visible = false;
         gun = GameObject.FindWithTag("Cannon").GetComponent<Cannon>();
     }
 
@@ -57,9 +58,11 @@ public class PlayerShoot : MonoBehaviour
         Rigidbody RB = bullet.GetComponent<Rigidbody>();
         if (RB != null)
         {
+            
             RB.AddForce(Camera.main.transform.forward * bulletForce, ForceMode.Impulse);
         }
         charge = 0f;
+        Destroy(bullet, 1f);
     }
     void ChargeShot()
     {
@@ -71,6 +74,7 @@ public class PlayerShoot : MonoBehaviour
             RB2.AddForce(Camera.main.transform.forward * bulletForce, ForceMode.Impulse);
         }
         charge = 0f;
+        Destroy(bullet2, 1f);
         
     }
     public void empowered()
