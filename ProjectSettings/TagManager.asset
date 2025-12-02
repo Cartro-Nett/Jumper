@@ -24,6 +24,9 @@ TagManager:
   - KeyProtector
   - HealthManager
   - AudioManager
+  - BossRightHand
+  - BossUpperRightHand
+  - BossUpperLeftHand
   layers:
   - Default
   - TransparentFX

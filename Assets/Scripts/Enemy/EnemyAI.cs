@@ -23,6 +23,18 @@ public class EnemyAI : MonoBehaviour
         {
             InvokeRepeating("ThrowBall", 2f, 2f);
         }
+        if(gameObject.CompareTag("BossRightHand"))
+        {
+            InvokeRepeating("ThrowBall", 1.5f, 1.5f);
+        }
+        if(gameObject.CompareTag("BossUpperRightHand"))
+        {
+            InvokeRepeating("ThrowBall", 2.5f, 2.5f);
+        }
+        if(gameObject.CompareTag("BossUpperLeftHand"))
+        {
+            InvokeRepeating("ThrowBall", 3f, 3f);
+        }
     }
 
     // Update is called once per frame
@@ -117,7 +129,7 @@ public class EnemyAI : MonoBehaviour
             Rigidbody rb = blueBall.GetComponent<Rigidbody>();
             rb.linearVelocity = direction * 8f;
             
-            Destroy(blueBall, 3f);
+            Destroy(blueBall, 4f);
 
         }
 
