@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
     {
         for (int i = 0; i < healthBar.Length; i++)
         {
-            if(i < Mathf.CeilToInt((float)player.health))
+            if(i < player.health)
             {
                 healthBar[i].color = Color.red;
             }

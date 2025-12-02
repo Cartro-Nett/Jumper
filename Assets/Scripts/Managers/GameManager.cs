@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+   
         audioManager =  GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         InvokeRepeating("backGroundMusic", 0.1f, 130f);
         
@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         if (textScreens[1]  != null)
         {
             textScreens[1].SetActive(true);
+            Cursor.visible = true;
             Time.timeScale = 0f;
         } 
     }
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
     {
         textScreens[1].SetActive(false);
         Time.timeScale = 1f;
+        Cursor.visible = false;
     }
     public void restartGame()
     {
@@ -112,6 +114,7 @@ public class GameManager : MonoBehaviour
     void EndOfLevel()
     {
         SceneManager.LoadSceneAsync(0);
+        Cursor.visible = true;
     }
     public void controlScreen()
     {

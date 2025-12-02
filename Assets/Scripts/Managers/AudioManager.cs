@@ -41,14 +41,14 @@ public class AudioManager : MonoBehaviour
     public void Audio()
     {
         Debug.Log("Its happening");
-            audioSourceBackground.PlayOneShot(audioBackground);
-            isItPlaying = true;
+        audioSourceBackground.PlayOneShot(audioBackground);
+        isItPlaying = true;
     }
         
     public void StopAudio()
     {
         Debug.Log("Anything");
-            audioSourceBackground.Stop();
-            isItPlaying = false;
+        audioSourceBackground.Stop();
+        isItPlaying = false;
     }
 }

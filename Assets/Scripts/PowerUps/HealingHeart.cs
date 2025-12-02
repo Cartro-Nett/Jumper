@@ -18,7 +18,6 @@ public class HealingHeart : MonoBehaviour
             
             if (player.health < 5)
             {
-                
                 player.health++;
                 healthManager.UpdateHealth();
                 Destroy(gameObject);

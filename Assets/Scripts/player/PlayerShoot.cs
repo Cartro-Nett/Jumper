@@ -14,6 +14,7 @@ public class PlayerShoot : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // The cursor in this script instead of game manager because this is not in the first scene.
         Cursor.visible = false;
         gun = GameObject.FindWithTag("Cannon").GetComponent<Cannon>();
     }
