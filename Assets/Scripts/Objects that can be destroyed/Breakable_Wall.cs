@@ -10,12 +10,7 @@ public class Breakable_Wall : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Breaks the wall and will get rid of the barrier that it was.
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("BigBullet"))

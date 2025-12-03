@@ -5,17 +5,7 @@ public class Player_SoundEffects : MonoBehaviour
     [SerializeField] AudioSource audioSourceEffects;
     [SerializeField] AudioClip[] audioEffects;
   
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Keep all the pickup sounds on player, as the pickups disappear and wont be played.
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Heart"))

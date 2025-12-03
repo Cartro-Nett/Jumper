@@ -12,7 +12,7 @@ public class ReAppear : MonoBehaviour
     }
     private IEnumerator PlatformCycle()
     {
-
+        // Simple deactivating and reactivating the platforms with the given times below.
         while (true)
         {
             

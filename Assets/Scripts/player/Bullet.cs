@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    // Soon as the player picks on the gun in game will be able to fire this bullet.
     void Update()
     {
         Moving();

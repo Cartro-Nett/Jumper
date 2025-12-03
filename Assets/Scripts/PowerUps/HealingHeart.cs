@@ -11,6 +11,7 @@ public class HealingHeart : MonoBehaviour
         healthManager = GameObject.FindWithTag("HealthManager").GetComponent<HealthManager>();
 
     }
+    // Heals the player and restores a red to the health bar.
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))

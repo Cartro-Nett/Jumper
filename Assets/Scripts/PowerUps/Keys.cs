@@ -13,11 +13,13 @@ public class Keys : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
+        // Igonres mulitple triggers.
         if (hasPickUp)
         {
             return;
         }
-
+        // Added plus one to the keys and checking if 2 is collected,
+        // whilst getting rid of the first door.
         if (collision.CompareTag("Player"))
         {
 
@@ -33,6 +35,7 @@ public class Keys : MonoBehaviour
     }
     void collectedKey()
     {
+        // Check to see if the player has two keys and the last door opens.
         if (keyCollected == 2)
         {
             doors[1].SetActive(false);

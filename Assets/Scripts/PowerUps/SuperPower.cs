@@ -20,6 +20,7 @@ public class SuperPower : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
+        // Increasing a lot of the variables in another scripts and activating a bool.
         if(collision.CompareTag("Player"))
         {
             player_M.jumpStr = 20;

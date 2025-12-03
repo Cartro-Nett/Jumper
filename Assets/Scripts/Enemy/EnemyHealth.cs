@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
         
         death();
     }
+    // Mkaing it so the boss has a second phase to the fight.
     void death()
     {
         if (CompareTag("KeyProtector") && enemyHealth < 10)
@@ -43,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
             
         }
     }
+    // Takes hp away, depending on the bullet fired the more health will be taken.
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.CompareTag("Bullet"))

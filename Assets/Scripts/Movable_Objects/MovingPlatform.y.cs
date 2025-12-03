@@ -14,6 +14,8 @@ public class MovingPlatformY : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // checking if the object is moving and when it reaches the target number
+        // moves in reverse
         if (moving)
         {
             transform.position += Vector3.up * Time.deltaTime;

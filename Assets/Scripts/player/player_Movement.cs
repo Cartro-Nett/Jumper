@@ -36,6 +36,7 @@ public class player_Movement : MonoBehaviour
         pause();
         
     }
+    // The input button for the player to pause.
     void pause()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
@@ -43,6 +44,7 @@ public class player_Movement : MonoBehaviour
             gameManager.pause();
         }
     }
+    // The inputs for the movement of the player and camera directions
     void movement()
     {
 
@@ -78,6 +80,7 @@ public class player_Movement : MonoBehaviour
 
 
     }
+    // To stop the player jumping constantly.
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -86,7 +89,7 @@ public class player_Movement : MonoBehaviour
             onGround = true;
         }
     }
-
+    // The input button for the player to jump.
     void jumping()
     {
         if (Input.GetKeyDown(KeyCode.Space) && onGround)

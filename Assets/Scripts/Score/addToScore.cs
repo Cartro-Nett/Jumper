@@ -10,6 +10,7 @@ public class addToScore : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
+    // Adds to the score all with different values, known by they tag name.
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("BronzeCoin"))

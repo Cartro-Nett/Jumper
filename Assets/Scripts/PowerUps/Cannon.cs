@@ -10,6 +10,7 @@ public class Cannon : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player").GetComponent<PlayerShoot>();
     }
+    //Will let the player have the functions of shooting when they pick up the gun.
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.CompareTag("Player"))

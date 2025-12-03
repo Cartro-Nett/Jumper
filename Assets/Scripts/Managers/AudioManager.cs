@@ -19,7 +19,8 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Making it so if the player is in range it would start another audio
+    // and stop the current one.
     void Update()
     {
        if (player == null)

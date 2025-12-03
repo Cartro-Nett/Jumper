@@ -18,6 +18,8 @@ public class Mushrooms_bounce : MonoBehaviour
     {
         
     }
+    // Attaching the bounce variable to the y so when player interacts,
+    // the player will go that high
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))

@@ -20,7 +20,7 @@ public class Player_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       // Checks to see if player's death conditions.
         
         if (health <= 0 || transform.position.y < -7)
         {
@@ -30,6 +30,7 @@ public class Player_Health : MonoBehaviour
             
         }
     }
+    // The differnet ways the player could taken damage if the bools are false.
     private void OnTriggerStay(Collider collision)
     {
         if (collision.CompareTag("DangerousGround") && damagePause == false && invincible == false)
@@ -63,6 +64,7 @@ public class Player_Health : MonoBehaviour
            
         }
     }
+    //Separated both the bools that stop damage to avoid any conflicts.
     void damageBreak()
     {
         damagePause = false;

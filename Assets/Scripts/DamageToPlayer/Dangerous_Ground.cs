@@ -14,6 +14,7 @@ public class Dangerous_Ground : MonoBehaviour
     {
        
     }
+    // Will keep hurting player, whilst the player is still in the area of Collison.
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))

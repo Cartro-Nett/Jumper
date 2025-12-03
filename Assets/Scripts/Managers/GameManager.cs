@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         
         updateHighScore();
     }
+    // The backgroundMusic will still needs improving.
     public void backGroundMusic()
     {
         if(audioManager != null && audioManager.isItPlaying == true)
@@ -43,12 +44,14 @@ public class GameManager : MonoBehaviour
         }
         
     }
+    // When game over happens it shows this screen
     public void gameOver()
     {
         audioSourceEffects.PlayOneShot(audioEffects[0]);
         textScreens[0].SetActive(true);
         Cursor.visible = true;
     }
+    // When the player pauses it will show this screen.
     public void pause()
     {
         if (textScreens[1]  != null)
@@ -58,41 +61,55 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
         } 
     }
+    // When the player is in the pause screen, this will get player back to game.
     public void resume()
     {
         textScreens[1].SetActive(false);
         Time.timeScale = 1f;
         Cursor.visible = false;
     }
+    // In pause screen, the player can restart the level.
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
     }
+    // In pause screen, if the player wants to exit the level.
     public void exitLevel()
     {
         SceneManager.LoadSceneAsync(0);
         Time.timeScale = 1f;
     }
+    //In the title page of the game the player can quit game.
     public void quitGame()
     {
         Application.Quit();
     }
+    // Gets the player to the first scene.
     public void firstLevel()
     {
         SceneManager.LoadSceneAsync(1);
     }
+    // Gets the player to the second Scene. - might not be fully done.
+    public void secondLevel()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
+    // Will display the players score for them to see.
     public void addScore(int scoreAdd)
     {
         playerScore += scoreAdd;
         scoreText.text = playerScore.ToString();
         
     }
+    // Will save the high score of the game.
     public void updateHighScore()
     {
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         highScoreText.text = $"HighScore: {highScore}";
     }
+    // When the player completes the level will choose from two screen options,
+    // one a new high score achieved and the other being if player does not achieve the high score. 
     public void completedLevel()
     {
         if(playerScore > highScore)
@@ -111,16 +128,19 @@ public class GameManager : MonoBehaviour
         Invoke("EndOfLevel", 7f);
         
     }
+    // Will load the title page of the game.
     void EndOfLevel()
     {
         SceneManager.LoadSceneAsync(0);
         Cursor.visible = true;
     }
+    //The options for the controls of the game, will de-active the other ui when active
     public void controlScreen()
     {
         textScreens[4].SetActive(false);
         textScreens[5].SetActive(true);
     }
+    // This will ecit the control screen and restore the pervious ui.
     public void exitControlScreen()
     {
         textScreens[4].SetActive(true);

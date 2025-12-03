@@ -16,8 +16,9 @@ public class Moveable_PlatformZ : MonoBehaviour
     {
         //Vector3 mov = new Vector3(0f, 10f, 0f);
         //gameObject.transform.position = mov;
-
-        
+ 
+        // checking if the object is moving and when it reaches the target number
+        // moves in reverse
         if(moving)
         {
             

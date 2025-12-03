@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Wanted to make it so its different times the method is being called and by different foes.
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (gameObject.CompareTag("Enemy"))
         {
@@ -44,6 +45,7 @@ public class EnemyAI : MonoBehaviour
     }
     void ChasePlayer()
     {
+        // This was designed by a former colleague in collage to follow player. 
         if (player == null)
         {
             return;
@@ -57,7 +59,7 @@ public class EnemyAI : MonoBehaviour
 
             Vector3 directionToPlayer = targetPosition - transform.position;
             
-
+            // This will rotate the enemy to face the player.
             if (directionToPlayer.sqrMagnitude > 0.01f)
             {
                 Quaternion look = Quaternion.LookRotation(directionToPlayer);
@@ -112,6 +114,7 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    // The bullet all the enemies will fire.
     public void ThrowBall()
     {
         if (player == null)  return;

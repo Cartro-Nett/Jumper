@@ -4,7 +4,9 @@ public class QuaternionExample : MonoBehaviour
 {
     public float move;
     bool moving = true;
-    // Update is called once per frame
+    
+    // The lab exercise that would keep a smooth rotation of an object.
+    // Added mine logic form the platfrom.y script just for the heart.
     void Update()
     {
         transform.rotation *= Quaternion.AngleAxis(90.0f * Time.deltaTime,

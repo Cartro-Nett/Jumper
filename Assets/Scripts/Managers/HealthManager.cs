@@ -8,6 +8,8 @@ public class HealthManager : MonoBehaviour
     {
         player = FindAnyObjectByType<Player_Health>();
     }
+    // This is the display to health bar using the players health to
+    // determine if its red or black
     public void UpdateHealth()
     {
         for (int i = 0; i < healthBar.Length; i++)

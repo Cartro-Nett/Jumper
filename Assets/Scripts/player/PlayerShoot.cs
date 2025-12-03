@@ -22,6 +22,7 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // The input for the player to choose for what shot they want.
         firePoint.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
         if (Input.GetMouseButton(0) && gun.hasPickUp)
         {
@@ -51,6 +52,7 @@ public class PlayerShoot : MonoBehaviour
             }
         }
     }
+    // How the the bullet is spawned and how long until it is destroyed
     void shoot()
     {
 
@@ -78,6 +80,7 @@ public class PlayerShoot : MonoBehaviour
         Destroy(bullet2, 1f);
         
     }
+    // Will only activate with collecting the powerup.
     public void empowered()
     {
         inPowered = true;
