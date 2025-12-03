@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         audioSourceEffects.PlayOneShot(audioEffects[0]);
         textScreens[0].SetActive(true);
-        
+        Cursor.visible = true;
     }
     public void pause()
     {
