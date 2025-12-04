@@ -11,12 +11,7 @@ public class Spawn_Objects : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<player_Movement>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    //Will go for all in the array of objects and make them all active to be seen by player.
     private void OnTriggerEnter(Collider collision)
     {
 
@@ -33,11 +28,17 @@ public class Spawn_Objects : MonoBehaviour
                 }
                 
             }
-            Invoke("getRid", 3f);
+            
+                Invoke("getRid", 3f);
+            
+            
+            
         }
     }
+    //To get rid of the the spawner object so the player cant re-enter and create an error.
     void getRid()
     {
         gameObject.SetActive(false);
     }
+    
 }

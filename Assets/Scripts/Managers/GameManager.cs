@@ -85,6 +85,11 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+    // Gets the player into the tutorial.
+    public void tutorial()
+    {
+        SceneManager.LoadSceneAsync(3);
+    }
     // Gets the player to the first scene.
     public void firstLevel()
     {
