@@ -119,7 +119,6 @@ public class EnemyAI : MonoBehaviour
     {
         if (player == null)  return;
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
         
 
         if (distanceToPlayer <= detectionRange)

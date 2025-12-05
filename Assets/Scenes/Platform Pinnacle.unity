@@ -163296,10 +163296,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6264581562304427425, guid: 1239faa64204b2940a5f0508728b0999, type: 3}
-      propertyPath: 'audioEffects.Array.data[3]'
-      value: 
-      objectReference: {fileID: 8300000, guid: f343dcbf2321b904a978aac6594aa9d4, type: 3}
     - target: {fileID: 6605871784236159818, guid: 1239faa64204b2940a5f0508728b0999, type: 3}
       propertyPath: m_Height
       value: 2.6237233
